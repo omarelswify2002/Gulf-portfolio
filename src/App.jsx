@@ -70,7 +70,7 @@ function App() {
       category: 'شعارات',
       description: 'شعار مبتكر يعبر عن الهوية التجارية بلمسة عصرية',
       images: [
-        '../public/media.jpg',
+        '/media.jpg',
         'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
@@ -83,12 +83,12 @@ function App() {
       category: 'إعلانات',
       description: 'بوستر إعلاني جذاب يلفت الانتباه ويوصل الرسالة بشكل فعال',
       images: [
-        '../public/poster.jpg',
-        '../public/poster1.jpg',
-        '../public/poster2.jpg',
-        '../public/poster3.jpg',
-        '../public/poster4.jpg',
-        '../public/poster5.jpg',
+        '/poster.jpg',
+        '/poster1.jpg',
+        '/poster2.jpg',
+        '/poster3.jpg',
+        '/poster4.jpg',
+        '/poster5.jpg',
       ]
     },
     {
