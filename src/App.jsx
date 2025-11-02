@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaMoon, FaSun, FaWhatsapp, FaLinkedin, FaBehance, FaTimes, FaArrowUp, FaCrown, FaChevronLeft, FaChevronRight, FaFilePdf } from 'react-icons/fa'
+import { FaMoon, FaSun, FaWhatsapp, FaLinkedin, FaBehance, FaTimes, FaArrowUp, FaCrown, FaChevronLeft, FaChevronRight, FaFilePdf, FaBars } from 'react-icons/fa'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -9,6 +9,7 @@ function App() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
 
   // Handle scroll to top visibility
   useEffect(() => {
@@ -208,7 +209,7 @@ function App() {
         : 'bg-gradient-to-br from-beige-50 via-white to-beige-100 text-gray-900'
     }`}>
 
-      {/* Navigation Bar */}
+      {/* Navigation Bar (responsive: desktop links, mobile hamburger) */}
       <nav className={`fixed top-0 right-0 left-0 z-40 backdrop-blur-lg transition-colors duration-300 ${
         darkMode
           ? 'bg-luxury-black/80 border-b border-gold-500/20'
@@ -216,10 +217,12 @@ function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <button onClick={() => scrollToTop()} className="font-arabic text-xl font-bold">
+            <button onClick={() => { scrollToTop(); setNavOpen(false); }} className="font-arabic text-xl font-bold">
               {profile.name}
             </button>
-            <div className="flex gap-8 font-arabic">
+
+            {/* Desktop links */}
+            <div className="hidden md:flex items-center gap-8 font-arabic">
               <button onClick={() => scrollToSection('about')} className={`hover:text-gold-500 transition-colors ${
                 darkMode ? 'text-beige-100' : 'text-gray-900'
               }`}>عني</button>
@@ -232,25 +235,73 @@ function App() {
               <button onClick={() => scrollToSection('contact')} className={`hover:text-gold-500 transition-colors ${
                 darkMode ? 'text-beige-100' : 'text-gray-900'
               }`}>تواصل</button>
-              {/* Dark Mode Toggle */}
+
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setDarkMode(!darkMode)}
-                className={`z-50 p-4 rounded-full shadow-lg transition-all duration-300 ${
+                aria-label="Toggle dark mode"
+                className={`z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
                   darkMode
                     ? 'bg-gold-500 text-luxury-black hover:bg-gold-400'
                     : 'bg-luxury-black text-gold-500 hover:bg-gray-800'
                 }`}
               >
-                {darkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
+                {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
               </motion.button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setNavOpen(!navOpen)}
+                aria-label={navOpen ? 'Close menu' : 'Open menu'}
+                className={`p-3 rounded-md transition-colors ${darkMode ? 'text-beige-100' : 'text-gray-900'}`}
+              >
+                {navOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {navOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className={`fixed inset-0 z-50 md:hidden ${darkMode ? 'bg-luxury-black/95' : 'bg-white/95'} p-6`}
+          >
+            <div className="flex justify-between items-center mb-8">
+              <button onClick={() => { scrollToTop(); setNavOpen(false); }} className="font-arabic text-xl font-bold">
+                {profile.name}
+              </button>
+              <button onClick={() => setNavOpen(false)} aria-label="Close menu" className="p-2">
+                <FaTimes size={22} />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-6 text-right">
+              <button onClick={() => { scrollToSection('about'); setNavOpen(false); }} className={`text-2xl font-arabic ${darkMode ? 'text-beige-100' : 'text-gray-900'}`}>عني</button>
+              <button onClick={() => { scrollToSection('education'); setNavOpen(false); }} className={`text-2xl font-arabic ${darkMode ? 'text-beige-100' : 'text-gray-900'}`}>التعليم</button>
+              <button onClick={() => { scrollToSection('projects'); setNavOpen(false); }} className={`text-2xl font-arabic ${darkMode ? 'text-beige-100' : 'text-gray-900'}`}>أعمالي</button>
+              <button onClick={() => { scrollToSection('contact'); setNavOpen(false); }} className={`text-2xl font-arabic ${darkMode ? 'text-beige-100' : 'text-gray-900'}`}>تواصل</button>
+
+              <div className="pt-4 border-t mt-4 border-gold-300/20">
+                <button onClick={() => { setDarkMode(!darkMode); }} className={`flex items-center gap-3 px-4 py-2 rounded-md ${darkMode ? 'text-beige-200' : 'text-gray-800'}`}>
+                  {darkMode ? <FaSun /> : <FaMoon />}
+                  <span className="font-arabic">تبديل الوضع</span>
+                </button>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section id="about" className="min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
