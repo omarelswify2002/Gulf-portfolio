@@ -67,20 +67,22 @@ function App() {
     },
     {
       id: 2,
-      name: 'تصميم شعار عصري',
+      name: 'تصميمات عيادات طبية',
       category: 'شعارات',
       description: 'شعار مبتكر يعبر عن الهوية التجارية بلمسة عصرية',
       images: [
         '/media.jpg',
-        'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop'
+        '/slogan1.jpg',
+        '/slogan2.jpg',
+        '/slogan3.jpg',
+        '/slogan4.jpg',
+        '/slogan5.jpg',
+        '/slogan6.jpg',
       ]
     },
     {
       id: 3,
-      name: 'تصميم بوستر إعلاني',
+      name: 'تصميمات العاب رياضية',
       category: 'إعلانات',
       description: 'بوستر إعلاني جذاب يلفت الانتباه ويوصل الرسالة بشكل فعال',
       images: [
@@ -418,11 +420,11 @@ function App() {
                   <FaCrown />
                 </div>
                 <div className="text-right">
-                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>بكالوريوس فنون تصميم</h3>
-                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>جامعة الخليج - 2016 - 2020</p>
+                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلومة الجرافيك ديزاين</h3>
+                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>المعهد القومي للاتصالات - NTI.</p>
                 </div>
               </div>
-              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>التركيز على الهوية البصرية، الطباعة والتصميم الإعلاني مع مشاريع تخرج عملية.</p>
+              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>خصصت أكثر من 120 ساعة لتعلم الجرافيك، بما في ذلك Adobe Photoshop وIllustrator.</p>
             </motion.div>
 
             {/* Diploma / Certifications */}
@@ -442,11 +444,11 @@ function App() {
                   <FaChevronLeft />
                 </div>
                 <div className="text-right">
-                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلوم التصميم التفاعلي</h3>
-                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>معهد التصميم الرقمي - 2021</p>
+                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلومة الجرافيك ديزاين بتقنية الAI</h3>
+                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>معهد تكنولوجيا المعلومات - ITI</p>
                 </div>
               </div>
-              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>شهادات عملية في واجهات المستخدم، تجربة المستخدم وأدوات تصميم متقدمة مثل Figma وAdobe XD.</p>
+              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>التركيز على التصميم الإبداعي وإنتاج المحتوى الرقمي باستخدام Adobe Photoshop وIllustrator وPremiere.</p>
             </motion.div>
 
             {/* Short Courses */}
@@ -466,11 +468,59 @@ function App() {
                   <FaChevronRight />
                 </div>
                 <div className="text-right">
-                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دورات قصيرة ومكثفة</h3>
-                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>ورش عمل وورش عبر الإنترنت - 2019 - الآن</p>
+                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلومة تصميم واجهة المستخدم UI/UX.</h3>
+                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>معهد تكنولوجيا المعلومات - ITI</p>
                 </div>
               </div>
-              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>دورات مكثفة في الطباعة المتقدمة، الرسوم المتحركة وتصميم العلامة التجارية.</p>
+              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>المواضيع المغطاه :  UX Fundamentals, User Research, Design Principles, Wireframing, Prototyping, Visual Design (Web & Mobile).</p>
+            </motion.div>
+
+            {/* Short Courses */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03, y: -6 }}
+              transition={{ duration: 0.6 }}
+              className={`p-6 rounded-2xl border transition-all hover:shadow-2xl transform-gpu ${
+                darkMode ? 'bg-gray-800/40 border-gold-500/20 hover:border-gold-400/40' : 'bg-white shadow-lg border-gold-200/30 hover:border-gold-500'
+              }`}
+              title="دورات قصيرة ومكثفة"
+            >
+              <div className="flex items-start gap-4">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
+                  <FaChevronRight />
+                </div>
+                <div className="text-right">
+                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>التسويق الرقمي بتقنية الAI.</h3>
+                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>معهد تكنولوجيا المعلومات - ITI</p>
+                </div>
+              </div>
+              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>كيفية استخدام الذكاء الاصطناعي لتحسين استراتيجيات التسويق الرقمي.</p>
+            </motion.div>
+
+            {/* Short Courses */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03, y: -6 }}
+              transition={{ duration: 0.6 }}
+              className={`p-6 rounded-2xl border transition-all hover:shadow-2xl transform-gpu ${
+                darkMode ? 'bg-gray-800/40 border-gold-500/20 hover:border-gold-400/40' : 'bg-white shadow-lg border-gold-200/30 hover:border-gold-500'
+              }`}
+              title="دورات قصيرة ومكثفة"
+            >
+              <div className="flex items-start gap-4">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
+                  <FaChevronRight />
+                </div>
+                <div className="text-right">
+                  <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>اساسيات الفن الرقمي بال Photoshop.</h3>
+                  <p className={`text-sm font-arabic ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>معهد تكنولوجيا المعلومات - ITI</p>
+                </div>
+              </div>
+              <p className={`mt-4 font-arabic ${darkMode ? 'text-beige-200' : 'text-gray-700'}`}>التقنيات الأساسية للفن الرقمي باستخدام Adobe Photoshop.</p>
             </motion.div>
           </div>
         </div>
