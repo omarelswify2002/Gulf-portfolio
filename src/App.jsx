@@ -10,6 +10,7 @@ function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const [worksTab, setWorksTab] = useState('photos')
 
   // Handle scroll to top visibility
   useEffect(() => {
@@ -129,6 +130,25 @@ function App() {
         'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
         'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop'
       ]
+    },
+  ]
+
+  // Videos data for 'My Works' -> Videos tab
+  const videos = [
+    {
+      id: 1,
+      title: 'CGI AI products',
+      src: '/CGI_AI_Video.mp4'
+    },
+    {
+      id: 2,
+      title: 'Product Promo (3D)',
+      src: 'https://www.youtube.com/embed/ScMzIvxBSi4'
+    },
+    {
+      id: 3,
+      title: 'Motion Design Reel',
+      src: 'https://www.youtube.com/embed/YE7VzlLtp-4'
     },
   ]
 
@@ -534,7 +554,7 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className={`text-5xl md:text-6xl font-bold mb-4 font-arabic ${
               darkMode ? 'text-gold-400' : 'text-luxury-black'
@@ -546,63 +566,112 @@ function App() {
             }`} />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, projectIndex) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: projectIndex * 0.1, duration: 0.5 }}
-                whileHover={{ y: -10 }}
-                onClick={() => openLightbox(projectIndex, 0)} // هنا استخدمنا openLightbox
-                className={`group cursor-pointer rounded-2xl overflow-hidden shadow-xl transition-all duration-300 ${
-                  darkMode
-                    ? 'bg-gray-800/50 hover:shadow-gold-500/20 border border-gold-500/10'
-                    : 'bg-white hover:shadow-2xl border border-gold-200/30'
-                }`}
-              >
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={project.images[0]}
-                    alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className={`absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
+          {/* Tabs: Photos / Videos */}
+          <div className="flex justify-center gap-4 mb-10">
+            <button
+              onClick={() => setWorksTab('photos')}
+              className={`px-5 py-2 rounded-full font-arabic font-semibold transition-colors ${worksTab === 'photos' ? (darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white') : (darkMode ? 'text-beige-100 bg-transparent' : 'text-gray-700 bg-white/40')}`}
+            >
+              الصور
+            </button>
+            <button
+              onClick={() => setWorksTab('videos')}
+              className={`px-5 py-2 rounded-full font-arabic font-semibold transition-colors ${worksTab === 'videos' ? (darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white') : (darkMode ? 'text-beige-100 bg-transparent' : 'text-gray-700 bg-white/40')}`}
+            >
+              الفيديوهات
+            </button>
+          </div>
+
+          {/* Photos grid (existing projects) */}
+          {worksTab === 'photos' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, projectIndex) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: projectIndex * 0.08, duration: 0.5 }}
+                  whileHover={{ y: -8 }}
+                  onClick={() => openLightbox(projectIndex, 0)}
+                  className={`group cursor-pointer rounded-2xl overflow-hidden shadow-xl transition-all duration-300 ${
                     darkMode
-                      ? 'bg-gradient-to-t from-luxury-black/90 via-luxury-black/50 to-transparent'
-                      : 'bg-gradient-to-t from-luxury-black/80 via-luxury-black/40 to-transparent'
-                  }`}>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-right">
-                      <p className="text-sm font-arabic mb-2 text-gold-300">{project.category}</p>
-                      <h3 className="text-xl font-arabic font-bold mb-2">{project.name}</h3>
-                      <p className="text-xs font-arabic text-beige-200">{project.description}</p>
-                      <div className="flex gap-2 mt-3">
-                        {project.images.slice(0, 4).map((_, index) => (
-                          <div key={index} className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                        ))}
-                        {project.images.length > 4 && (
-                          <div className="text-xs text-gold-300">+{project.images.length - 4}</div>
-                        )}
+                      ? 'bg-gray-800/50 hover:shadow-gold-500/20 border border-gold-500/10'
+                      : 'bg-white hover:shadow-2xl border border-gold-200/30'
+                  }`}
+                >
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <img
+                      src={project.images[0]}
+                      alt={project.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100 ${
+                      darkMode
+                        ? 'bg-gradient-to-t from-luxury-black/90 via-luxury-black/50 to-transparent'
+                        : 'bg-gradient-to-t from-luxury-black/80 via-luxury-black/40 to-transparent'
+                    }`}>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-right">
+                        <p className="text-sm font-arabic mb-2 text-gold-300">{project.category}</p>
+                        <h3 className="text-xl font-arabic font-bold mb-2">{project.name}</h3>
+                        <p className="text-xs font-arabic text-beige-200">{project.description}</p>
+                        <div className="flex gap-2 mt-3">
+                          {project.images.slice(0, 4).map((_, index) => (
+                            <div key={index} className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                          ))}
+                          {project.images.length > 4 && (
+                            <div className="text-xs text-gold-300">+{project.images.length - 4}</div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className={`text-2xl font-bold font-arabic ${
-                    darkMode ? 'text-gold-300' : 'text-luxury-black'
-                  }`}>
-                    {project.name}
-                  </h3>
-                  <p className={`text-sm font-arabic mt-2 ${
-                    darkMode ? 'text-beige-300' : 'text-gray-600'
-                  }`}>
-                    {project.images.length} صورة
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="p-6">
+                    <h3 className={`text-2xl font-bold font-arabic ${
+                      darkMode ? 'text-gold-300' : 'text-luxury-black'
+                    }`}>
+                      {project.name}
+                    </h3>
+                    <p className={`text-sm font-arabic mt-2 ${
+                      darkMode ? 'text-beige-300' : 'text-gray-600'
+                    }`}>
+                      {project.images.length} صورة
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          {/* Videos grid */}
+          {worksTab === 'videos' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {videos.map((video, idx) => (
+                <motion.div
+                  key={video.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08, duration: 0.45 }}
+                  className={`p-4 rounded-2xl transition-shadow ${darkMode ? 'bg-gray-800/40 border border-gold-500/20' : 'bg-white shadow-lg border border-gold-200/30'}`}
+                >
+                  <div className="aspect-[16/9] w-full rounded overflow-hidden bg-black">
+                    <iframe
+                      title={video.title}
+                      src={video.src}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="mt-4 text-right">
+                    <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>{video.title}</h3>
+                    <p className={`text-sm font-arabic mt-2 ${darkMode ? 'text-beige-300' : 'text-gray-600'}`}>مشاهدة عرض توضيحي</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
