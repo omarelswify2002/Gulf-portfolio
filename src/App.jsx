@@ -461,7 +461,7 @@ function App() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
-                  <FaChevronLeft />
+                  <FaCrown />
                 </div>
                 <div className="text-right">
                   <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلومة الجرافيك ديزاين بتقنية الAI</h3>
@@ -485,7 +485,7 @@ function App() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
-                  <FaChevronRight />
+                  <FaCrown />
                 </div>
                 <div className="text-right">
                   <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>دبلومة تصميم واجهة المستخدم UI/UX.</h3>
@@ -509,7 +509,7 @@ function App() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
-                  <FaChevronRight />
+                  <FaCrown />
                 </div>
                 <div className="text-right">
                   <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>التسويق الرقمي بتقنية الAI.</h3>
@@ -533,7 +533,7 @@ function App() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center ${darkMode ? 'bg-gold-500 text-luxury-black' : 'bg-gold-500 text-white'}`}>
-                  <FaChevronRight />
+                  <FaCrown />
                 </div>
                 <div className="text-right">
                   <h3 className={`text-xl font-bold font-arabic ${darkMode ? 'text-gold-300' : 'text-luxury-black'}`}>اساسيات الفن الرقمي بال Photoshop.</h3>
