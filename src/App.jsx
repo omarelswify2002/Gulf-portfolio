@@ -56,14 +56,20 @@ function App() {
   const projects = [
     {
       id: 1,
-      name: 'هوية بصرية فاخرة',
+      name: 'Illustration-style',
       category: 'هوية بصرية',
       description: 'تصميم هوية بصرية متكاملة لمؤسسة فاخرة تجمع بين الأصالة والحداثة',
       images: [
-        'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop'
+        '/IMG-20251207-WA0011.jpg',
+        '/IMG-20251207-WA0010.jpg',
+        '/IMG-20251207-WA0009.jpg',
+        '/IMG-20251207-WA0008.jpg',
+        '/IMG-20251207-WA0007.jpg',
+        '/IMG-20251207-WA0006.jpg',
+        '/IMG-20251207-WA0005.jpg',
+        '/IMG-20251207-WA0004.jpg',
+        '/IMG-20251207-WA0003.jpg',
+        '/IMG-20251207-WA0002.jpg', 
       ]
     },
     {
@@ -97,14 +103,18 @@ function App() {
     },
     {
       id: 4,
-      name: 'تصميم غلاف مجلة',
+      name: 'Social Media With AI',
       category: 'مطبوعات',
       description: 'غلاف مجلة أنيق يعكس محتواها بطريقة فنية مبتكرة',
       images: [
-        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop'
+        '/WhatsApp Image 2025-12-06 at 17.09.16_e6e6003e.jpg',
+        '/WhatsApp Image 2025-12-06 at 17.08.50_92ed4bcb.jpg',
+        '/WhatsApp Image 2025-12-06 at 17.08.50_3e8c3cd5.jpg',
+        '/IMG-20251207-WA0020.jpg',
+        '/IMG-20251207-WA0018.jpg',
+        '/IMG-20251207-WA0015.jpg',
+        '/IMG-20251207-WA0013.jpg',
+        '/IMG-20251207-WA0012.jpg'
       ]
     },
     {
@@ -113,24 +123,25 @@ function App() {
       category: 'هوية بصرية',
       description: 'بطاقة عمل احترافية تعكس الهوية البصرية للمؤسسة',
       images: [
-        'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop'
+        'WhatsApp Image 2025-12-06 at 17.01.13_d276f8c2.jpg',
+        'IMG-20251117-WA0010.jpg',
+        'IMG-20251117-WA0009.jpg',
+        'IMG-20251117-WA0008.jpg',
+        'IMG-20251117-WA0007.jpg',
       ]
     },
-    {
-      id: 6,
-      name: 'تصميم سوشيال ميديا',
-      category: 'سوشيال ميديا',
-      description: 'تصاميم مخصصة لوسائل التواصل الاجتماعي تجذب الجمهور',
-      images: [
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop'
-      ]
-    },
+    // {
+    //   id: 6,
+    //   name: 'تصميم سوشيال ميديا',
+    //   category: 'سوشيال ميديا',
+    //   description: 'تصاميم مخصصة لوسائل التواصل الاجتماعي تجذب الجمهور',
+    //   images: [
+    //     'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+    //     'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop',
+    //     'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
+    //     'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop'
+    //   ]
+    // },
   ]
 
   // Videos data for 'My Works' -> Videos tab
@@ -138,18 +149,18 @@ function App() {
     {
       id: 1,
       title: 'CGI AI products',
-      src: '/CGI_AI_Video.mp4'
+      src: 'https://www.youtube.com/embed/8_JwCn2A0aQ'
     },
     {
       id: 2,
-      title: 'Product Promo (3D)',
-      src: 'https://www.youtube.com/embed/ScMzIvxBSi4'
+      title: 'Animation AI',
+      src: 'https://www.youtube.com/embed/xshHsGzh1S0'
     },
-    {
-      id: 3,
-      title: 'Motion Design Reel',
-      src: 'https://www.youtube.com/embed/YE7VzlLtp-4'
-    },
+    // {
+    //   id: 3,
+    //   title: 'Motion Design Reel',
+    //   src: 'https://www.youtube.com/embed/YE7VzlLtp-4'
+    // },
   ]
 
   // Contact information
@@ -917,36 +928,36 @@ function App() {
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
                 <button
                   onClick={prevProject}
-                  className="text-white hover:text-gold-500 transition-colors font-arabic px-4 py-2 rounded-lg bg-black/50 hover:bg-black/70"
+                  className={`text-white/90 transition-all font-arabic px-3 py-1.5 text-sm rounded-md ${darkMode ? 'bg-black/40 text-white/85' : 'bg-black/30 text-white/85'} opacity-75 hover:opacity-100 hover:scale-105 transform-gpu hover:bg-black/60`}
+                  aria-label="المشروع السابق"
                 >
                   المشروع السابق
                 </button>
                 <button
                   onClick={nextProject}
-                  className="text-white hover:text-gold-500 transition-colors font-arabic px-4 py-2 rounded-lg bg-black/50 hover:bg-black/70"
+                  className={`text-white/90 transition-all font-arabic px-3 py-1.5 text-sm rounded-md ${darkMode ? 'bg-black/40 text-white/85' : 'bg-black/30 text-white/85'} opacity-75 hover:opacity-100 hover:scale-105 transform-gpu hover:bg-black/60`}
+                  aria-label="المشروع التالي"
                 >
                   المشروع التالي
                 </button>
               </div>
 
-              {/* Thumbnails */}
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2 mt-4">
-                {projects[currentProjectIndex]?.images.map((image, index) => (
+              {/* Image dots indicator (replaces thumbnails) */}
+              <div className="absolute bottom-1 sm:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
+                {projects[currentProjectIndex]?.images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-16 h-16 rounded overflow-hidden border-2 transition-all ${
-                      index === currentImageIndex 
-                        ? 'border-gold-500 scale-110' 
-                        : 'border-transparent hover:border-gold-300'
+                    aria-label={`الصورة ${index + 1}`}
+                    className={`rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-gold-400 ${
+                      index === currentImageIndex
+                        ? `${darkMode ? 'bg-gold-400' : 'bg-gold-500'} w-3 h-3` 
+                        : `${darkMode ? 'bg-white/30' : 'bg-black/20'} w-2.5 h-2.5 hover:${darkMode ? 'bg-white/60' : 'bg-black/40'}`
                     }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
+                    style={{
+                      boxShadow: index === currentImageIndex ? '0 0 8px rgba(250, 204, 21, 0.6)' : 'none'
+                    }}
+                  />
                 ))}
               </div>
             </div>
