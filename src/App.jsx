@@ -119,7 +119,7 @@ function App() {
     },
     {
       id: 5,
-      name: 'تصميمات تذاكر طيران',
+      name: 'Social Media - Dunya consultants',
       category: 'هوية بصرية',
       description: 'بطاقة عمل احترافية تعكس الهوية البصرية للمؤسسة',
       images: [
